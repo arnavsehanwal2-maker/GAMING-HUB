@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy Gaming Hub</title>
+  <style>
+    /* Animated rave background */
+    body {
+      background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffcc);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Header glow */
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2.8em;
+      font-weight: bold;
+      text-shadow: 3px 3px #000;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff; }
+      to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #ffcc00; }
+    }
+
+    /* Navigation bar */
+    nav {
+      text-align: center;
+      padding: 15px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.6);
+      box-shadow: 0 0 10px #ff00cc;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #00ffcc;
+      color: #000;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    /* Game grid */
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      padding: 30px;
+    }
+    .game-card {
+      background: rgba(0,0,0,0.7);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px #000;
+      transition: transform 0.4s, box-shadow 0.4s;
+      border: 2px solid transparent;
+      perspective: 1000px;
+    }
+    .game-card:hover {
+      transform: rotateY(10deg) scale(1.07);
+      box-shadow: 0 0 30px #ffcc00;
+      border: 2px solid #00ffcc;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+    h2 {
+      text-align: center;
+      margin: 12px 0;
+      font-size: 1.5em;
+      color: #ffcc00;
+      text-shadow: 1px 1px #000;
+      transition: 0.3s;
+    }
+    h2:hover {
+      color: #00ffcc;
+      text-shadow: 0 0 15px #00ffcc;
+      transform: scale(1.1);
+    }
+
+    /* Footer glow */
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 2em;
+      font-weight: bold;
+      background: rgba(0,0,0,0.85);
+      color: #ffcc00;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px #ff00cc;
+      border-top: 4px solid #00ffcc;
+      animation: footerPulse 2s infinite alternate;
+    }
+    @keyframes footerPulse {
+      from { text-shadow: 0 0 10px #ff00cc; }
+      to { text-shadow: 0 0 25px #00ffcc; }
+/* Ad card styling */
+.ad-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 20px #ff00cc;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ad-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00ffcc;
+}
+
+.ad-box {
+  background: rgba(0,0,0,0.6);
+  border: 2px dashed #ffcc00;
+  padding: 40px;
+  color: #ffcc00;
+  font-size: 1.2em;
+  text-shadow: 0 0 10px #00ffcc;
+}
+    }
+  </style>
+</head>
+<body>
+  <header>🎮 Crazy Gaming Hub 🎮</header>
+
+    <nav>
+    <a href="#">Home</a>
+    <a href="#">Games</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Game grid -->
+  <div class="game-grid">
+          <div class="game-card">
+      <h2>Game 1</h2>
+      <iframe src="https://html5.gamedistribution.com/dd2ab5adad664c508d3fa032bd19e8c8/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no"></iframe>
+    </div>
+<!-- Game 2 -->
+<div class="game-card">
+  <h2>Game 2</h2>
+  <iframe src="https://html5.gamedistribution.com/ad01a468819748e7a9ce560dcfa4b5cf/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 3 -->
+<div class="game-card">
+  <h2>Game 3</h2>
+  <iframe src="https://html5.gamedistribution.com/2a7a74f769ea40babd7d55ed7704af44/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 4 -->
+<div class="game-card">
+  <h2>Game 4</h2>
+  <iframe src="https://html5.gamedistribution.com/53ad84c4f3b440f2b65d5382fadf731f/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 5 -->
+<div class="game-card">
+  <h2>Game 5</h2>
+  <iframe src="https://html5.gamedistribution.com/5439e7734cf14dd082fe993be28b99db/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Ad Slot after Game 5 -->
+<div class="ad-card">
+  <h2>Sponsored Ad</h2>
+  <div class="ad-box">Your Ad Here</div>
+</div>
+
+<!-- Game 6 -->
+<div class="game-card">
+  <h2>Game 6</h2>
+  <iframe src="https://html5.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 7 -->
+<div class="game-card">
+  <h2>Game 7</h2>
+  <iframe src="https://html5.gamedistribution.com/343ae1f841604180b7b4cf511da9ab5b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 8 -->
+<div class="game-card">
+  <h2>Game 8</h2>
+  <iframe src="https://html5.gamedistribution.com/b207ec567c824d109249a0cd7c552275/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 9 -->
+<div class="game-card">
+  <h2>Game 9</h2>
+  <iframe src="https://html5.gamedistribution.com/e07da43b39e443738d6a84a4a6255c32/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 10 -->
+<div class="game-card">
+  <h2>Game 10</h2>
+  <iframe src="https://html5.gamedistribution.com/6ccf5ab92bf4469ea1988aafaba35ca2/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Ad Slot after Game 10 -->
+<div class="ad-card">
+  <h2>Sponsored Ad</h2>
+  <div class="ad-box">Your Ad Here</div>
+</div>
+
+<!-- Game 11 -->
+<div class="game-card">
+  <h2>Game 11</h2>
+  <iframe src="https://html5.gamedistribution.com/d27907a8189e423da6fca6b580bfbf84/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 12 -->
+<div class="game-card">
+  <h2>Game 12</h2>
+  <iframe src="https://html5.gamedistribution.com/6e17d0861e424f3aba356d9e2138b395/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 13 -->
+<div class="game-card">
+  <h2>Game 13</h2>
+  <iframe src="https://html5.gamedistribution.com/bb3deebf6a6b43dd97ded3010fa16a00/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 14 -->
+<div class="game-card">
+  <h2>Game 14</h2>
+  <iframe src="https://html5.gamedistribution.com/53fc51e1231447d5b5b85e03c2829e47/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 15 -->
+<div class="game-card">
+  <h2>Game 15</h2>
+  <iframe src="https://html5.gamedistribution.com/cf93ca785ae64b8e9d19444bd54e5976/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Ad Slot after Game 15 -->
+<div class="ad-card">
+  <h2>Sponsored Ad</h2>
+  <div class="ad-box">Your Ad Here</div>
+</div>
+
+<!-- Game 16 -->
+<div class="game-card">
+  <h2>Game 16</h2>
+  <iframe src="https://html5.gamedistribution.com/561d4a2d831d4630a9c29b2c51a3a5bf/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 17 -->
+<div class="game-card">
+  <h2>Game 17</h2>
+  <iframe src="https://html5.gamedistribution.com/b19adff25c044cacb3accf8fbc02a5e5/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 18 -->
+<div class="game-card">
+  <h2>Game 18</h2>
+  <iframe src="https://html5.gamedistribution.com/1adf969783854409b65b5ccb0873ea8a/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 19 -->
+<div class="game-card">
+  <h2>Game 19</h2>
+  <iframe src="https://html5.gamedistribution.com/2f54e43a475543e0b05a5209e75a9d29/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Game 20 -->
+<div class="game-card">
+  <h2>Game 20</h2>
+  <iframe src="https://html5.gamedistribution.com/6b91889aa08e40ffbc1c09be1a8e81ce/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<!-- Ad Slot after Game 20 -->
+<div class="ad-card">
+  <h2>Sponsored Ad</h2>
+  <div class="ad-box">Your Ad Here</div>
+</div>
+
+  </div>
+    
+
+  <!-- Footer -->
+  <footer>SEHANWAL BRO'S</footer>
+</body>
+</html>
