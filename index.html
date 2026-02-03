@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+  /* Spinner overlay */
+  #spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    /* Fade-out effect */
+    opacity: 1; /* fully visible at start */
+    transition: opacity 0.5s ease; /* fade smoothly */
+  }
+
+  /* When hidden, fade out */
+  #spinner-overlay.hidden {
+    opacity: 0;
+    pointer-events: none; /* prevent clicks while fading */
+  }
+
+  /* Spinner circle */
+  .spinner {
+    border: 6px solid #f3f3f3; /* light gray */
+    border-top: 6px solid #3498db; /* blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+
+  /* Spin animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+
+ 
   <title>Crazy Gaming Hub – Play Free Online Games</title>
 
 <meta name="description" content="Crazy Gaming Hub is a free online gaming website where you can play fun browser games instantly. No downloads, just play and enjoy.">
@@ -19,6 +62,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crazy Gaming Hub</title>
   <style>
+  /* Spinner overlay */
+#spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Spinner circle */
+.spinner {
+  border: 6px solid #f3f3f3; /* light gray */
+  border-top: 6px solid #3498db; /* blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+  /* Fade animation for games */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.game {
+  opacity: 0; /* start hidden */
+  animation: fadeIn 0.8s forwards;
+}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .game {
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+  @media (max-width: 768px) {
+  iframe {
+    height: 300px;
+  }
+}
+
+  /* Pagination */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: grid;
+}
+
+.pagination {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pagination button {
+  background: rgba(0,0,0,0.7);
+  color: #ffcc00;
+  border: 2px solid #00ffcc;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.pagination button:hover {
+  background: #00ffcc;
+  color: #000;
+}
+
+.pagination button.active {
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+}
+
     /* Animated rave background */
     body {
       background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffcc);
@@ -155,6 +290,10 @@
   </style>
 </head>
 <body>
+  <div id="spinner-overlay">
+  <div class="spinner"></div>
+</div>
+
   <header>🎮 Crazy Gaming Hub 🎮</header>
 
     <nav>
@@ -170,31 +309,31 @@
     <!-- Game 1 -->
     <div class="game-card">
       <h2>Play Action Arcade Game Online – Fast & Fun</h2>
-      <iframe src="https://html5.gamedistribution.com/dd2ab5adad664c508d3fa032bd19e8c8/"></iframe>
+      <iframe data-src="https://html5.gamedistribution.com/dd2ab5adad664c508d3fa032bd19e8c8/"loading="lazy">></iframe>
     </div>
 
     <!-- Game 2 -->
     <div class="game-card">
       <h2>Play Casual Fun Game Online – Relax & Enjoy</h2>
-      <iframe src="https://html5.gamedistribution.com/ad01a468819748e7a9ce560dcfa4b5cf/"></iframe>
+      <iframe data-src="https://html5.gamedistribution.com/ad01a468819748e7a9ce560dcfa4b5cf/"loading="lazy">></iframe>
     </div>
 
     <!-- Game 3 -->
     <div class="game-card">
       <h2>Play Survival Game Online – Stay Alive</h2>
-      <iframe src="https://html5.gamedistribution.com/2a7a74f769ea40babd7d55ed7704af44/"></iframe>
+      <iframe data-src="https://html5.gamedistribution.com/2a7a74f769ea40babd7d55ed7704af44/"loading="lazy">></iframe>
     </div>
 
     <!-- Game 4 -->
     <div class="game-card">
       <h2>Play Free Shooting Game Online – No Download</h2>
-      <iframe src="https://html5.gamedistribution.com/53ad84c4f3b440f2b65d5382fadf731f/"></iframe>
+      <iframe data-src="https://html5.gamedistribution.com/53ad84c4f3b440f2b65d5382fadf731f/"loading="lazy">></iframe>
     </div>
 
     <!-- Game 5 -->
     <div class="game-card">
       <h2>Play Mobile-Friendly Game Online – Smooth Gameplay</h2>
-      <iframe src="https://html5.gamedistribution.com/5439e7734cf14dd082fe993be28b99db/"></iframe>
+      <iframe data-src="https://html5.gamedistribution.com/5439e7734cf14dd082fe993be28b99db/"loading="lazy">></iframe>
     </div>
   </div>
 
@@ -203,33 +342,32 @@
     <!-- Game 6 -->
 <div class="game-card">
   <h2>Play Ultimate Free Online Game – Try Now</h2>
-  <iframe src="https://html5.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 7 -->
 <div class="game-card">
   <h2>Play Fun Browser Game Online – No Signup</h2>
-  <iframe src="https://html5.gamedistribution.com/343ae1f841604180b7b4cf511da9ab5b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/343ae1f841604180b7b4cf511da9ab5b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 8 -->
 <div class="game-card">
   <h2>Play Combat Action Game Online – Intense Battles</h2>
-  <iframe src="https://html5.gamedistribution.com/b207ec567c824d109249a0cd7c552275/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/b207ec567c824d109249a0cd7c552275/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 9 -->
 <div class="game-card">
   <h2>Play Multiplayer Browser Game Online</h2>
-  <iframe src="https://html5.gamedistribution.com/e07da43b39e443738d6a84a4a6255c32/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/e07da43b39e443738d6a84a4a6255c32/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 10 -->
 <div class="game-card">
   <h2>Play Endless Arcade Game Online – Beat Your Score</h2>
-  <iframe src="https://html5.gamedistribution.com/6ccf5ab92bf4469ea1988aafaba35ca2/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/6ccf5ab92bf4469ea1988aafaba35ca2/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
- game-cards here -->
   </div>
 
   <!-- PAGE 3 -->
@@ -237,31 +375,31 @@
     <!-- Game 11 -->
 <div class="game-card">
   <h2>Casual Fun Game – Easy & Relaxing Play</h2>
-  <iframe src="https://html5.gamedistribution.com/d27907a8189e423da6fca6b580bfbf84/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/d27907a8189e423da6fca6b580bfbf84/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 12 -->
 <div class="game-card">
   <h2>Endless Arcade Game – Beat the High Score</h2>
-  <iframe src="https://html5.gamedistribution.com/6e17d0861e424f3aba356d9e2138b395/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/6e17d0861e424f3aba356d9e2138b395/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 13 -->
 <div class="game-card">
   <h2>Survival Challenge Game – Stay Alive</h2>
-  <iframe src="https://html5.gamedistribution.com/bb3deebf6a6b43dd97ded3010fa16a00/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/bb3deebf6a6b43dd97ded3010fa16a00/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 14 -->
 <div class="game-card">
   <h2>Mobile Friendly Game – Smooth Gameplay</h2>
-  <iframe src="https://html5.gamedistribution.com/53fc51e1231447d5b5b85e03c2829e47/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/53fc51e1231447d5b5b85e03c2829e47/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 15 -->
 <div class="game-card">
   <h2>Time Killer Arcade Game – Quick Fun</h2>
-  <iframe src="https://html5.gamedistribution.com/cf93ca785ae64b8e9d19444bd54e5976/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/cf93ca785ae64b8e9d19444bd54e5976/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 </div>
@@ -273,35 +411,37 @@
     <!-- Game 16 -->
 <div class="game-card">
   <h2>Free HTML5 Browser Game – Instant Play</h2>
-  <iframe src="https://html5.gamedistribution.com/561d4a2d831d4630a9c29b2c51a3a5bf/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/561d4a2d831d4630a9c29b2c51a3a5bf/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 17 -->
 <div class="game-card">
   <h2>Combat Action Game – Intense Battles</h2>
-  <iframe src="https://html5.gamedistribution.com/b19adff25c044cacb3accf8fbc02a5e5/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/b19adff25c044cacb3accf8fbc02a5e5/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy"></iframe>
 </div>
 
 <!-- Game 18 -->
 <div class="game-card">
   <h2>Fun Browser Game – No Signup Required</h2>
-  <iframe src="https://html5.gamedistribution.com/1adf969783854409b65b5ccb0873ea8a/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/1adf969783854409b65b5ccb0873ea8a/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 19 -->
 <div class="game-card">
   <h2>Fast Paced Arcade Game – Test Your Reflexes</h2>
-  <iframe src="https://html5.gamedistribution.com/2f54e43a475543e0b05a5209e75a9d29/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/2f54e43a475543e0b05a5209e75a9d29/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
 
 <!-- Game 20 -->
 <div class="game-card">
   <h2>Ultimate Free Online Game – Play Now</h2>
-  <iframe src="https://html5.gamedistribution.com/6b91889aa08e40ffbc1c09be1a8e81ce/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"></iframe>
+  <iframe data-src="https://html5.gamedistribution.com/6b91889aa08e40ffbc1c09be1a8e81ce/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" scrolling="no" frameborder="0"loading="lazy">></iframe>
 </div>
   </div>
 
     </div>
+<div class="pagination" id="pagination"></div>
+
   <!-- Footer -->
   <footer>SEHANWAL BRO'S</footer>
   <footer>
@@ -310,6 +450,87 @@
   <a href="privacy-policy.html">Privacy Policy</a> |
   <a href="terms.html">Terms & Conditions</a>
   </footer>
+
+ <script>
+  const pages = document.querySelectorAll(".page");
+  const pagination = document.getElementById("pagination");
+
+  function loadIframes(page) {
+    page.querySelectorAll("iframe").forEach(iframe => {
+      if (!iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+    });
+  }
+
+  function unloadIframes(page) {
+    page.querySelectorAll("iframe").forEach(iframe => {
+      iframe.removeAttribute("src");
+    });
+  }
+
+  function showPage(index) {
+    pages.forEach((page, i) => {
+      if (i === index) {
+        page.classList.add("active");
+        loadIframes(page);   // LOAD games
+      } else {
+        page.classList.remove("active");
+        unloadIframes(page); // STOP games
+      }
+    });
+
+    document.querySelectorAll(".pagination button").forEach((btn, i) => {
+      btn.classList.toggle("active", i === index);
+    });
+
+    window.scrollTo(0, 0);
+  }
+
+  pages.forEach((page, i) => {
+    const btn = document.createElement("button");
+    btn.textContent = i + 1;
+    btn.onclick = () => showPage(i);
+    pagination.appendChild(btn);
+  });
+
+  showPage(0); // load first page
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const games = document.querySelectorAll('.game');
+  games.forEach((game, index) => {
+    game.style.animationDelay = `${index * 0.2}s`;
+  });
+});
+</script>
+
+
+<script>
+  window.addEventListener('load', function() {
+    const spinnerOverlay = document.getElementById('spinner-overlay');
+    if (spinnerOverlay) {
+      spinnerOverlay.style.display = 'none';
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('load', function() {
+    const spinnerOverlay = document.getElementById('spinner-overlay');
+    if (spinnerOverlay) {
+      setTimeout(() => {
+        spinnerOverlay.classList.add('hidden');
+        setTimeout(() => {
+          spinnerOverlay.style.display = 'none';
+        }, 500); // matches CSS fade duration
+      }, 2000); // keep spinner visible 2 seconds for testing
+    }
+  });
+</script>
+
+
 </body>
 
 </html>
@@ -317,6 +538,6 @@
 
 
 
-
+ 
 
 
