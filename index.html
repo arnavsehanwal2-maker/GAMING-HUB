@@ -352,6 +352,17 @@
 </section>
   
 <div class="game-grid">
+  
+<!-- SEARCH BAR -->
+<div style="text-align:center; margin:20px;">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search games..."
+    onkeyup="searchGames()"
+    style="padding:10px; width:80%; max-width:400px; border-radius:8px; border:1px solid #555; font-size:16px;"
+  />
+</div>
 
   <!-- PAGE 1 -->
   <div class="page active">
@@ -603,7 +614,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
+<script>
+function searchGames() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let games = document.getElementsByClassName("game-card");
 
+  for (let i = 0; i < games.length; i++) {
+    let text = games[i].textContent.toLowerCase();
+
+    if (text.includes(input)) {
+      games[i].style.display = "";
+    } else {
+      games[i].style.display = "none";
+    }
+  }
+}
+</script>
+  
 </body>
 
 </html>
@@ -612,6 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
  
+
 
 
 
